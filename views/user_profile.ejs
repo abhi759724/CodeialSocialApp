@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>" >
+
+<!-- Only add variable parts -->
+<div class="box">
+    <!-- <h1>Codeial / Profile Page</h1> -->
+    <div class="user-img-box flex">
+        <% if(profile_user){ %>
+        <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100"></img>
+        <% } %>
+    </div>
+
+    <% if(user.id == profile_user.id){ %>
+        <!-- if user matches then show the form -->
+        <form action="/users/update/<%= profile_user.id %>" method="post" class="form userForm" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" value="<%= profile_user.name %>" required />
+
+            <label for="email">Email</label>
+            <input type="email"name="email" id="email" placeholder="Your Email" value="<%= profile_user.email %>" required />
+
+            <input type="submit" class="signBtn" value="Update">
+            <input type="file" name="avatar" placeholder="Profile Picture" />
+        </form>
+    <%}else{ %>
+        <!-- else show only the profile info -->
+        <div class="other-users">
+            <div class="user-profile-data">
+                <p style="color: rgba(18, 18, 18, 0.658);">Email: </p>
+                <p><%= profile_user.email %></p>
+            </div>
+            <div class="user-profile-data">
+                <p style="color: rgba(18, 18, 18, 0.658);">Name: </p> 
+                <p><%= profile_user.name %></p>
+            </div>
+            <button type="submit">Add Friend</button>
+            <button type="submit">Remove Friend</button>
+        </div>
+    <% } %>
+</div>
+
+<!-- we an also use script tag here -->

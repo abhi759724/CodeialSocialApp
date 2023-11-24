@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="<%= assetPath('css/user_sign_in.css') %>" >
+
+<div class="box">
+    <form action="/users/create-Session" method="POST" class="form">
+        <h1>Sign In</h1>
+        <input type="email" name="email" placeholder="Email" required />
+        <span class="pswdBox">
+            <input type="password" name="password" placeholder="Password" id="signInPswd" required />
+            <button onclick="togglePassword('signInPswd')"><i class="fa-regular fa-eye-slash"></i></button>
+        </span>
+        <p class="forgotPswd">
+            <a href="/forgotPswd/forgot-password">Forgot Password?</a>
+        </p>
+        <input class="signBtn" type="submit" value="Sign In">
+        <div class="flex">
+            <div class="google-icon">
+                <img width="25" height="25" src="https://img.icons8.com/color/25/google-logo.png" alt="google-logo"/>
+            </div>
+            <a class="google-link" href="/users/auth/google">Sign In with Google</a>
+        </div>
+    </form>
+</div>
+
+
+<script src="<%= assetPath('js/pswd-hideShow-toggler.js') %>"></script>

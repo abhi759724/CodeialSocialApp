@@ -1,0 +1,120 @@
+.home-container{
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
+    height: 90vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* margin-left: 3rem; */
+    /* position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 50px;
+    right: 0; */
+}
+/* common  */
+.fa-heart{
+    color: red;
+}
+/* common section */
+section h3{
+    padding: .2rem;
+    text-decoration: underline;
+}
+
+section:not(:first-child) {
+    flex: 0 0 30%;
+    height: 40vh;
+    width: 25%;
+    border-left: 3px solid lightgray;
+    padding-bottom: 1rem;
+  }
+
+/* section 1 */
+#feed-posts{
+    width: 60%;
+    padding-left: 4rem;
+    /* padding: 10px; */
+    /* margin: 5% 0 0 5%; */
+    height: 80vh;
+    flex: 0 0 85%;
+    /* border: 2px solid red; */
+}
+.post-form{
+    width: 90%;
+    height: 25%;
+    /* border: 2px solid rgb(128, 0, 49); */
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
+.post-form textarea{
+    width: 80%;
+    height: 80%;
+    border: 2px solid rgba(143, 143, 143, 0.6);
+    outline: none;
+    padding: .5rem;
+}
+
+.post-form input{
+    width: 10%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgb(249, 92, 6);
+}
+
+/* section 2 */
+/* #user-friends{
+    
+    
+} */
+
+#posts-list-container{
+    /* border: 2px solid purple; */
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+}
+
+#posts-list-container ul{
+    flex-wrap: wrap;
+}
+
+/* section 3 */
+/* #user-list{
+    border: 2px solid blue;
+} */
+#user-list > ul{
+    overflow: auto;
+    height: 38vh;
+}
+#user-list li{
+    border-top: 2px solid rgba(36, 3, 126, 0.884);
+    color: black;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem 0;
+}
+
+#user-list li:hover{
+    box-shadow: 2px 5px 10px rgb(93 93 93);
+}
+
+#user-list img{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid rgba(0, 0, 0, 0.717);
+    margin-right: .5rem;
+}
+
+#user-list .user-list-name{
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}

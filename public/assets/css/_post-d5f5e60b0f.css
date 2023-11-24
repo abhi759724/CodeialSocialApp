@@ -1,0 +1,88 @@
+.each-post{
+    box-shadow: 2px 5px 10px rgb(93 93 93);
+    width: 90%;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    /* border: 2px solid red; */
+    /* background-color: palevioletred; */
+    background-color: white;
+}
+.each-post:hover{
+    box-shadow: 2px 5px 8px rgb(62, 62, 62);
+}
+.each-post-text{
+    box-shadow: 2px 5px 8px rgb(36, 3, 126);
+    font-weight: bold;
+    color: black;
+}
+
+.each-post-text:hover{
+    box-shadow: 2px 5px 8px rgb(23, 2, 81);
+}
+
+.small-delete a{
+    color:black;
+    float: right;
+}
+
+.post-user{
+    width: 50%;
+    display: flex;
+    margin-bottom: 1rem;
+    font-size: .8rem;
+}
+
+.post-user div{
+    height: 2rem;
+    margin: 0 .5rem;
+}
+
+.post-user img{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid rgba(0, 0, 0, 0.717);
+}
+
+.post-user span{
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.884);
+}
+
+.post-user .post-user-name{
+    font-size: 1.1rem;
+}
+
+.post-user .post-timing{
+    font-size: .8rem;
+    color: rgba(0, 0, 0, 0.619);
+}
+
+.post-content{
+    padding-bottom: .5rem; border-bottom: 1px solid rgba(128, 128, 128, 0.63);
+}
+
+.toggle-like-button{
+    color: black;
+}
+
+.comment-form{
+    border: none;
+    /* display: block; */
+    margin: .5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-form input{
+    margin: .2rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    outline: none;
+    width: 90%;
+    border: 2px solid rgba(128, 128, 128, 0.571);
+    border-radius: .2rem;
+}

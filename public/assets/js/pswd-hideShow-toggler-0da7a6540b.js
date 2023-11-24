@@ -1,0 +1,1 @@
+function togglePassword(e){const s=document.getElementById(e),t=s.nextElementSibling.querySelector("i");"password"===s.type?(s.type="text",t.classList.remove("fa-eye-slash"),t.classList.add("fa-eye")):(s.type="password",t.classList.remove("fa-eye"),t.classList.add("fa-eye-slash"))}

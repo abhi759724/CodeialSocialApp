@@ -1,0 +1,53 @@
+.other-users{
+    background-color: white;
+    height: 35%;
+    width: 25%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.user-profile-data{
+    padding:.5rem 1rem;
+}
+
+.other-users button{
+    background-color: rgb(249, 92, 6);
+    margin-left: 1rem;
+    padding: .5rem;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+/* loged-in user profile */
+.user-img-box{
+    background-color: white;
+    border:none;
+    outline: none;
+    width: 25%;
+    height: 30%;
+    justify-content: center;
+}
+.user-img-box img{
+    border: 2px solid rgb(8, 67, 155);
+    width: 40%;
+    height: 80%;
+    border-radius: 50%;
+}
+.userForm{
+    background-color: white;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+.userForm label{
+    color: rgb(108, 108, 108);
+    font-weight: bold;
+    text-align: left;
+    /* border: 2px solid green; */
+    width: 100%;
+    padding-left: 1rem;
+}

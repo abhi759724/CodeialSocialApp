@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="<%= assetPath('css/_chat.css') %>" >
+
+<% if(locals.user){ %>
+    <aside id="chat-Btn">
+        <div class="flex"><i class="fa-solid fa-message"></i></div>
+    </aside>
+
+    <aside id="chatbox" >   <!-- id="user-chat-box" -->
+        <div id="close-chats">X</div>
+        <ul class="messageBox" id="chat-messages-list" >
+            <!-- <li class="other-message">
+                <span>Other Message</span>
+                <sub>abc@gmail.com</sub>
+            </li>
+
+            <li class="self-message">
+                <span>Self Message</span>
+                <sub>xyz@gmail.com</sub>
+            </li> -->
+        </ul>
+        <div id="chat-message-input-container">
+            <input type="text" placeholder="Type message here..." id="chat-message-input" />
+            <button id="send-message" >Send</button>
+        </div>
+    </aside>
+<% } %>
+
+<script>
+    const showPopupBtn = document.getElementById('chat-Btn');
+    const closePopupBtn = document.getElementById('close-chats');
+    const popup = document.getElementById('chatbox');
+
+    showPopupBtn.addEventListener('click', () => {
+      popup.style.display = 'block';
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+</script>
+

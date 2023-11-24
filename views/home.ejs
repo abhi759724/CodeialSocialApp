@@ -1,0 +1,102 @@
+<!-- Only add variable parts -->
+
+<link rel="stylesheet" href="<%= assetPath('css/home.css') %>">
+<link rel="stylesheet" href="<%= assetPath('css/_friend.css') %>">
+
+<h1>Codeial / <%= title %>
+</h1>
+
+<div class="home-container">
+    <section id="feed-posts">
+        <h3>Posts</h3>
+        <% if(locals.user){ %>
+            <form action="/posts/create" id="new-post-form" method="POST" class="form post-form">
+                <textarea name="content" cols="30" rows="3" placeholder="Type Here... "></textarea>
+                <input type="submit" value="post">
+            </form>
+            <% } %>
+
+                <div id="posts-list-container">
+                    <ul class="flex">
+                        <% for(post of posts){ %>
+                            <%- include('_post') -%>
+                                <% } %>
+                    </ul>
+                </div>
+    </section>
+
+    <section id="user-friends">
+        <h3>Friends</h3>
+        <ul id="friend-list">
+            <% for(friend of all_friends){ %>
+                <li id="friend-<%= friend.id %>">
+                    <img src="<%= friend.to_user.avatar %>" alt="<%= friend.to_user.name %>">
+
+                    <a href="/users/profile/<%= friend.to_user.id %>" class="user-friend-name">
+                        <%= friend.to_user.name %>
+                    </a>
+
+                    <a href="/friends/friendship/remove/<%= friend.id %>"
+                        class="remove-friend remove-add-btn">Remove</a>
+                </li>
+                <% } %>
+        </ul>
+    </section>
+
+    <section id="user-list">
+        <h3>Users</h3>
+        <ul>
+            <% for(u of all_users){ %>
+
+                <li>
+                    <img src="<%= u.avatar %>" alt="<%= u.name %>" width="100"></img>
+
+                    <a class="user-list-name" href="/users/profile/<%= u.id %>">
+                        <%= u.name %>
+                    </a>
+
+                    <a class="add-friend-btn remove-add-btn" href="/friends/friendship/add/?toUser=<%= u._id %>">
+                        <!-- /?id=<%=u._id%> -->
+                        Add Friend
+                    </a>
+                </li>
+                <% } %>
+
+        </ul>
+    </section>
+
+    <%- include('_chat') -%>
+</div>
+
+
+<script src="<%= assetPath('js/home_post_comment.js') %>"></script>
+
+<script src="<%= assetPath('js/home_post.js') %>"></script>
+
+
+<script src="<%= assetPath('js/toggle_likes.js') %>"></script>
+<script>
+    $('.toggle-like-button').each(function () {
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
+
+<script src="<%= assetPath('js/friend_request.js') %>"></script>
+
+
+
+<!-- socket.io link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"
+    integrity="sha512-Z6C1p1NIexPj5MsVUunW4pg7uMX6/TT3CUVldmjXx2kpip1eZcrAnxIusDxyFIikyM9A61zOVNgvLr/TGudOQg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="<%= assetPath('js/chat_engine.js') %>"></script>
+<% if(locals.user){%>
+    <script>
+        new ChatEngine('chatbox', '<%= locals.user.email %>', '<%= locals.user.name %>');
+    </script>
+    <% } %>
+
+        <!-- for post and comment timing -->
+        <script src="<%= assetPath('js/post_comment_timing.js') %>"></script>

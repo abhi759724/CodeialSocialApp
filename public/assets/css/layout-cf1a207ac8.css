@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(219, 227, 230);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* body */
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    border-radius: .2rem;
+    border: 1px solid rgba(128, 128, 128, 0.226);
+    background-color: white;
+    width: 25%;
+}
+
+.form h1{
+    margin: 1rem 0;
+    color: rgb(249, 92, 6);
+}
+
+.form input{
+    margin: .6rem;
+    padding: .5rem;
+    width: 90%;
+    border-radius: .2rem;
+    outline: none;
+    border: 1px solid rgba(167, 167, 167, 0.678);
+}
+
+.form .signBtn{
+    background-color: rgb(249, 92, 6);
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.form > div{
+    margin: .5rem 0 1rem 0;
+    background-color: rgb(8, 67, 155);
+    width: 90%;
+    font-weight: bold;
+    font-size: 1.3rem;
+    justify-content:left;
+    cursor: pointer;
+}
+
+.google-icon{
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: .2rem;
+    padding: .3rem .5rem;
+    margin: .2rem;
+    margin-right: 1.5rem;
+}
+
+/* user-friend section */
+
+#user-friends p{
+    font-size: 1rem;
+}

@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="<%= assetPath('css/user_sign_up.css') %>" >
+
+<div class="box">
+    <form action="/users/create" method="POST" class="form">
+        <h1>Sign Up</h1>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+
+        <span class="signUp_pswdBox">
+            <input type="password" name="password" placeholder="Password" id="signUpPswd" required />
+            <button onclick="togglePassword('signUpPswd')"><i class="fa-regular fa-eye-slash"></i></button>
+        </span>
+
+        <span class="signUp_pswdBox">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" id="signUp_NewPswd" required />
+            <button onclick="togglePassword('signUp_NewPswd')"><i class="fa-regular fa-eye-slash"></i></button>
+        </span>
+
+        <input class="signBtn" type="submit" value="Sign Up"></input>
+        <div class="flex">
+            <div class="google-icon">
+                <img width="25" height="25" src="https://img.icons8.com/color/25/google-logo.png" alt="google-logo"/>
+            </div>
+            <a class="google-link" href="/users/auth/google">Sign Up with Google</a>
+        </div>
+    </form>
+
+</div>
+
+<script src="<%= assetPath('js/pswd-hideShow-toggler.js') %>"></script>

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="<%= assetPath('css/_header.css') %>" >
+
+<header class="flex">
+    <!-- Page Header -->
+    <h1><a href="/">Codeial</a></h1>
+
+
+    <ul class="flex">
+        <% if(locals.user){ %> 
+            <li>
+                <p class="profile-img">
+                    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100"></img>
+                
+                    <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
+                </p>
+            </li>
+            <li>
+                <a href="/users/sign-out">Sign Out</a>
+            </li>
+        <% }else{ %>
+            <li>
+                <a href="/users/sign-in">Sign In</a>
+            </li>
+            <li>
+                <a href="/users/sign-up">Sign-Up</a>
+            </li>
+        <% } %>
+    </ul>
+</header>

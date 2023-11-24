@@ -1,0 +1,17 @@
+<footer class="flex">
+    <!-- Page Footer -->
+
+
+    <p>&copy; Coding Ninjas, All Right Reserved</p>
+    <ul class="flex">
+        <li><a href="/" class="home">Home</a></li>
+        <li>
+            <% if(locals.user){ %>
+                <p>
+                    <a href="/users/profile/<%= user.id %>">Profile</a>
+                </p>
+                <% } %>
+        </li>
+    </ul>
+
+</footer>

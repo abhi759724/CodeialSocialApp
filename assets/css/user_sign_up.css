@@ -1,0 +1,26 @@
+
+.signUp_pswdBox{
+    display: flex;
+    align-items: center;
+    margin: 0.6rem;
+    /* padding: 0.5rem; */
+    width: 90%;
+    border-radius: 0.2rem;
+    outline: none;
+    border: 1px solid rgba(167, 167, 167, 0.678);
+}
+
+.signUp_pswdBox input{
+    margin: 0;
+    border: none;
+}
+
+.signUp_pswdBox button{
+    height: fit-content;
+    border: none;
+    background-color: white;
+}
+
+.signUp_pswdBox button i{
+    color: rgba(148, 148, 148, 0.678);
+}

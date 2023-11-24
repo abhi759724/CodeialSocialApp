@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="<%= assetPath('css/_post.css') %>" >
+
+<li class="each-post" id="post-<%= post._id %>"> 
+    <p class="each-post-text">
+        <% if (locals.user && locals.user.id == post.user.id){ %>
+            <small class="small-delete">
+                <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">X</a> 
+            </small>
+        <% } %>
+
+        <div class="post-user">
+            <% if(locals.user){%>
+                <div><img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="100"></div>
+            <% } %>
+             <span>
+                <p class="post-user-name"> <%= post.user.name %> </p>
+                <p class="comment-timing"><%= post.createdAt.toLocaleDateString() %></p>
+            </span>
+        </div>
+        
+        <p class="post-content"><%= post.content %></p>
+        <!-- <br> -->
+        <!-- <small class="small-text">
+            <%= post.user.name %>
+        </small> -->
+        <!-- <br> -->
+        <small>
+            <% if(locals.user){ %>
+                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+                    <i class="fa-regular fa-heart"></i> <%= post.likes.length %>
+                </a>
+            <% }else{ %>
+                <i class="fa-regular fa-heart"></i> <%= post.likes.length %>
+            <% } %>
+        </small>
+    </p>
+    <div class="post-comments">
+        <% if (locals.user){ %>
+            <form action="/comments/create" method="POST" class="comment-form" id="post-<%= post._id %>-comments-form" >
+                <input type="text" name="content" placeholder="Type Here to add comment..." required />
+                <input type="hidden" name="post" value="<%= post._id %>" />
+                <input type="submit" value="Add Comment" style="font-weight:bold; background-color: rgba(128, 128, 128, 0.461);"/>
+            </form>
+        <% } %>
+
+        <div class="post-comments-list">
+            <ul class="flex" id="post-comments-<%= post._id %>">
+                <% for(comment of post.comments){ %>   
+                    <%- include('_comment')-%>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</li>
